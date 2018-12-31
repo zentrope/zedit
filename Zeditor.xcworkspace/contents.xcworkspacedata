@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
-   <FileRef
-      location = "group:todo.md">
-   </FileRef>
+   <Group
+      location = "container:"
+      name = "Docs">
+      <FileRef
+         location = "group:readme.md">
+      </FileRef>
+      <FileRef
+         location = "group:todo.md">
+      </FileRef>
+   </Group>
    <FileRef
       location = "group:Zedit/Zedit.xcodeproj">
    </FileRef>
