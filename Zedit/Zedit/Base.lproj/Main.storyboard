@@ -870,22 +870,22 @@
             <objects>
                 <viewController title="Editor" id="2eg-04-MTE" customClass="EditTextViewController" customModule="Zedit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="tQl-qh-IGZ">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="650" height="600"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZl-bk-NzU">
-                                <rect key="frame" x="0.0" y="0.0" width="450" height="260"/>
+                                <rect key="frame" x="0.0" y="0.0" width="650" height="560"/>
                                 <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="ytt-95-XzH">
-                                    <rect key="frame" x="0.0" y="0.0" width="450" height="260"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="650" height="560"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" findStyle="bar" smartInsertDelete="YES" id="via-Ph-ReT" customClass="EditTextView" customModule="Zedit" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="450" height="260"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="650" height="560"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="450" height="260"/>
-                                            <size key="maxSize" width="450" height="10000000"/>
+                                            <size key="minSize" width="650" height="560"/>
+                                            <size key="maxSize" width="650" height="10000000"/>
                                             <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                         </textView>
                                     </subviews>
@@ -894,15 +894,15 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="450" id="bFZ-t6-8vm"/>
                                 </constraints>
                                 <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="AWa-tf-3nT">
-                                    <rect key="frame" x="434" y="0.0" width="16" height="260"/>
+                                    <rect key="frame" x="634" y="0.0" width="16" height="560"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="tsY-Wf-iEu" customClass="EditControlView" customModule="Zedit" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="260" width="450" height="40"/>
+                                <rect key="frame" x="0.0" y="560" width="650" height="40"/>
                                 <subviews>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ytW-jU-faI">
-                                        <rect key="frame" x="402.5" y="8" width="38" height="23"/>
+                                        <rect key="frame" x="602.5" y="8" width="38" height="23"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="2Ch-MO-hD5"/>
                                             <constraint firstAttribute="height" constant="22" id="Dpr-4o-1ur"/>
@@ -941,7 +941,7 @@
                 </viewController>
                 <customObject id="daU-Qi-Ge6" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="153" y="1351"/>
+            <point key="canvasLocation" x="267" y="1381"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
