@@ -24,7 +24,5 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func application(_ sender: NSApplication, openFiles filenames: [String]) {
         print("Files to open: \(filenames)")
     }
-
-
 }
 

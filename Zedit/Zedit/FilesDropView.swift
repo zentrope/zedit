@@ -33,10 +33,6 @@ class FilesDropView: NSView {
         return .copy
     }
 
-    override func draggingEnded(_ sender: NSDraggingInfo) {
-        print("ENDED \(sender)")
-    }
-
     override func performDragOperation(_ sender: NSDraggingInfo) -> Bool {
         let pb = sender.draggingPasteboard
         if let urls = pb.readObjects(forClasses: [NSURL.self], options: [:]) as? [URL] {

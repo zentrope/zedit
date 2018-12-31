@@ -18,6 +18,7 @@ Non-comprehensive and in no particular order.
 
 ## Completed
 
+- [x] allow files to be dropped on application icon
 - [x] drop view delegate so file view controller gets notified
 - [x] drag/drop machinery for outline view (log what's dropped)
 - [x] github project
