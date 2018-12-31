@@ -17,17 +17,28 @@ class FilesViewController: NSViewController {
     // MARK: - Outlets
 
     @IBOutlet weak var outlineView: NSOutlineView!
+    @IBOutlet var dropView: FilesDropView!
 
     // MARK: - View controller lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //outlineView.registerForDraggedTypes([NSPasteboard.PasteboardType.fileNameType(forPathExtension: "md")])
+        dropView.delegate = self
         outlineView.dataSource = self
         outlineView.delegate = self
     }
 
+}
+
+extension FilesViewController: FilesDropViewDelegate {
+
+    func droppedURLs(_ urls: [URL]) {
+        for url in urls {
+            let u = FileManager.default.isUbiquitousItem(at: url)
+            print("- \(url) :: iCloud? \(u)")
+        }
+    }
 }
 
 extension FilesViewController: NSOutlineViewDataSource {

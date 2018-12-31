@@ -4,8 +4,8 @@
 
 Non-comprehensive and in no particular order.
 
-- [ ] drag/drop machinery for outline view (log what's dropped)
 - [ ] folders section for outline view
+- [ ] some sort of data model for managing files and folders
 - [ ] drop folder makes folder show up expanded one level
 - [ ] drop arbitrary files?
 - [ ] can you ask if a file is a text file?
@@ -18,6 +18,8 @@ Non-comprehensive and in no particular order.
 
 ## Completed
 
+- [x] drop view delegate so file view controller gets notified
+- [x] drag/drop machinery for outline view (log what's dropped)
 - [x] github project
 - [x] source control
 - [x] placeholder `readme.md` file

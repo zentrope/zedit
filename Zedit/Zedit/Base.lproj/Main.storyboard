@@ -856,6 +856,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="dropView" destination="IRz-Jk-lHh" id="g1k-sH-isS"/>
                         <outlet property="outlineView" destination="AIN-Fc-u23" id="BaO-PE-uRz"/>
                     </connections>
                 </viewController>
@@ -936,7 +937,7 @@
                 </viewController>
                 <customObject id="daU-Qi-Ge6" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="326" y="1140"/>
+            <point key="canvasLocation" x="195" y="1234"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
