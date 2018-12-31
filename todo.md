@@ -14,10 +14,10 @@ Non-comprehensive and in no particular order.
 - [ ] syntax highlight markdown
 - [ ] save markdown file
 - [ ] sidebar has an area for open files (like bbedit does)?
-- [ ] window limited in how small it can get
 
 ## Completed
 
+- [x] window limited in how small it can get
 - [x] allow files to be dropped on application icon
 - [x] drop view delegate so file view controller gets notified
 - [x] drag/drop machinery for outline view (log what's dropped)

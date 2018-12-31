@@ -678,7 +678,7 @@
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="0.0"/>
+            <point key="canvasLocation" x="-214" y="-357"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="8hS-5i-Gjp">
@@ -689,7 +689,7 @@
                         <splitViewItem id="wcf-wD-UhY"/>
                     </splitViewItems>
                     <splitView key="splitView" dividerStyle="thin" vertical="YES" id="FWN-Sc-4Jy">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="800" height="500"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
                             <outlet property="delegate" destination="kU7-SD-DCL" id="ykC-P8-yn7"/>
@@ -703,25 +703,25 @@
                 </splitViewController>
                 <customObject id="wkN-MO-uCI" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="708"/>
+            <point key="canvasLocation" x="103" y="640"/>
         </scene>
         <!--Files Source List-->
         <scene sceneID="RcC-Wz-3X3">
             <objects>
                 <viewController title="Files Source List" id="KFl-8O-vYw" customClass="FilesViewController" customModule="Zedit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="IRz-Jk-lHh" customClass="FilesDropView" customModule="Zedit" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="150" height="359"/>
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="360"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <visualEffectView appearanceType="inheritedVibrantLight" blendingMode="behindWindow" material="underWindowBackground" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="9gj-2d-Mu7">
-                                <rect key="frame" x="0.0" y="299" width="150" height="60"/>
+                                <rect key="frame" x="0.0" y="300" width="150" height="60"/>
                                 <subviews>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="vKa-pj-1uy">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="40"/>
                                         <subviews>
                                             <searchField wantsLayer="YES" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0M-wr-uCP">
                                                 <rect key="frame" x="20" y="8" width="110" height="24"/>
-                                                <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="mI1-mw-ZaT">
+                                                <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="mI1-mw-ZaT">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -744,14 +744,14 @@
                                     <constraint firstItem="vKa-pj-1uy" firstAttribute="leading" secondItem="9gj-2d-Mu7" secondAttribute="leading" id="nFc-a8-6QA"/>
                                 </constraints>
                             </visualEffectView>
-                            <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="26" horizontalPageScroll="10" verticalLineScroll="26" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OLn-Qv-IPe">
-                                <rect key="frame" x="0.0" y="0.0" width="150" height="299"/>
+                            <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OLn-Qv-IPe">
+                                <rect key="frame" x="0.0" y="0.0" width="150" height="300"/>
                                 <clipView key="contentView" drawsBackground="NO" id="3xg-Qj-Pnr">
-                                    <rect key="frame" x="0.0" y="0.0" width="150" height="299"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="300"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowHeight="24" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" outlineTableColumn="3D1-rw-RxW" id="AIN-Fc-u23">
-                                            <rect key="frame" x="0.0" y="0.0" width="150" height="299"/>
+                                        <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" outlineTableColumn="3D1-rw-RxW" id="AIN-Fc-u23">
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="300"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -834,6 +834,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="250" id="VHN-JT-xFZ"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="Wv5-pc-EQZ"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="dSU-jj-qsJ"/>
                                 </constraints>
                                 <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="Trl-fB-aEF">
                                     <rect key="frame" x="0.0" y="283" width="150" height="16"/>
@@ -862,7 +863,7 @@
                 </viewController>
                 <customObject id="KDL-G1-bXl" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-153" y="1170"/>
+            <point key="canvasLocation" x="-171" y="1381"/>
         </scene>
         <!--Editor-->
         <scene sceneID="CE3-ry-lI0">
@@ -889,6 +890,9 @@
                                         </textView>
                                     </subviews>
                                 </clipView>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="450" id="bFZ-t6-8vm"/>
+                                </constraints>
                                 <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="AWa-tf-3nT">
                                     <rect key="frame" x="434" y="0.0" width="16" height="260"/>
                                     <autoresizingMask key="autoresizingMask"/>
@@ -905,7 +909,7 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="37" id="Ijx-yZ-xWR"/>
                                             <constraint firstAttribute="width" constant="37" id="LeX-dz-20q"/>
                                         </constraints>
-                                        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSRefreshTemplate" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="OFt-Ur-RMl">
+                                        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSRefreshTemplate" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" transparent="YES" imageScaling="proportionallyDown" inset="2" id="OFt-Ur-RMl">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
@@ -937,16 +941,16 @@
                 </viewController>
                 <customObject id="daU-Qi-Ge6" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="195" y="1234"/>
+            <point key="canvasLocation" x="153" y="1351"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="IQv-IB-iLA">
+                <windowController showSeguePresentationStyle="single" id="B8D-0N-5wS" sceneMemberID="viewController">
+                    <window key="window" title="Zedit" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" fullSizeContentView="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="contentRect" x="0.0" y="0.0" width="800" height="500"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
@@ -958,7 +962,7 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="250"/>
+            <point key="canvasLocation" x="-28" y="48"/>
         </scene>
     </scenes>
     <resources>
