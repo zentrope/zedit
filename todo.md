@@ -14,9 +14,11 @@ Non-comprehensive and in no particular order.
 - [ ] syntax highlight markdown
 - [ ] save markdown file
 - [ ] sidebar has an area for open files (like bbedit does)?
+- [ ] create an app icon, use [HIG][appicon] to figure "document" icon type
 
 ## Completed
 
+- [x] Restore main window when clicking app icon.
 - [x] window limited in how small it can get
 - [x] allow files to be dropped on application icon
 - [x] drop view delegate so file view controller gets notified
@@ -31,3 +33,7 @@ Non-comprehensive and in no particular order.
 - [x] editor window has reasonable insets
 - [x] sidebar limited in how big, small it can get
 - [x] create the project
+
+
+[hig]: https://developer.apple.com/design/human-interface-guidelines/macos/overview/themes/
+[appicon]: https://developer.apple.com/design/human-interface-guidelines/macos/icons-and-images/app-icon/

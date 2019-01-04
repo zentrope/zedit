@@ -15,6 +15,7 @@
 		534DD60821D99FFF00A71209 /* EditTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534DD60721D99FFF00A71209 /* EditTextViewController.swift */; };
 		534DD60A21D9A19B00A71209 /* FilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534DD60921D9A19B00A71209 /* FilesViewController.swift */; };
 		534DD60C21D9DA0400A71209 /* FilesDropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534DD60B21D9DA0400A71209 /* FilesDropView.swift */; };
+		53FEE6BA21DF3510003474DF /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FEE6B921DF3510003474DF /* MainWindowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		534DD60721D99FFF00A71209 /* EditTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditTextViewController.swift; sourceTree = "<group>"; };
 		534DD60921D9A19B00A71209 /* FilesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesViewController.swift; sourceTree = "<group>"; };
 		534DD60B21D9DA0400A71209 /* FilesDropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesDropView.swift; sourceTree = "<group>"; };
+		53FEE6B921DF3510003474DF /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				534DD5F321D999A600A71209 /* AppDelegate.swift */,
+				53FEE6B921DF3510003474DF /* MainWindowController.swift */,
 				534DD5F721D999A700A71209 /* Assets.xcassets */,
 				534DD5F921D999A700A71209 /* Main.storyboard */,
 				534DD5FC21D999A700A71209 /* Info.plist */,
@@ -151,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				534DD5F421D999A600A71209 /* AppDelegate.swift in Sources */,
+				53FEE6BA21DF3510003474DF /* MainWindowController.swift in Sources */,
 				534DD60421D99E4400A71209 /* EditControlView.swift in Sources */,
 				534DD60621D99F4100A71209 /* EditTextView.swift in Sources */,
 				534DD60A21D9A19B00A71209 /* FilesViewController.swift in Sources */,

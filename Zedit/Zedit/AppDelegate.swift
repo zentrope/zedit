@@ -11,8 +11,6 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-
-
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
     }
@@ -24,5 +22,33 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func application(_ sender: NSApplication, openFiles filenames: [String]) {
         print("Files to open: \(filenames)")
     }
+
+    func applicationDidBecomeActive(_ notification: Notification) {
+        // This will make the main window appear if it has been closed
+        // and the user clicks the app icon, or ⌘-Tabs to the app.
+
+        func noVisibleWindows() -> Bool {
+            for w in NSApp.windows {
+                if w.isVisible {
+                    return false
+                }
+            }
+            return true
+        }
+
+        if noVisibleWindows() {
+            MainWindowController.show()
+        }
+    }
+
+    func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
+        // When the user clicks on the app-icon and there's no window, open a window.
+
+        if !flag {
+            MainWindowController.show()
+        }
+        return true
+    }
+
 }
 
