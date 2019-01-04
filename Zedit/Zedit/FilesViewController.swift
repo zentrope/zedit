@@ -177,6 +177,7 @@ extension FilesViewController: NSOutlineViewDelegate {
             let id = NSUserInterfaceItemIdentifier("DataCell")
             let view = outlineView.makeView(withIdentifier: id, owner: nil) as? NSTableCellView
             view?.textField?.stringValue = file.url.lastPathComponent
+            view?.imageView?.image = NSWorkspace.shared.icon(forFile: file.url.path)
             view?.textField?.sizeToFit()
             return view
 
