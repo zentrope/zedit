@@ -4,10 +4,9 @@
 
 Non-comprehensive and in no particular order.
 
-- [ ] folders section for outline view
-- [ ] some sort of data model for managing files and folders
 - [ ] drop folder makes folder show up expanded one level
-- [ ] drop arbitrary files?
+- [ ] click disclosure on directory to load next level
+- [ ] send message to text view to load selected file
 - [ ] can you ask if a file is a text file?
 - [ ] view text files in text view
 - [ ] preview markdown
@@ -15,9 +14,16 @@ Non-comprehensive and in no particular order.
 - [ ] save markdown file
 - [ ] sidebar has an area for open files (like bbedit does)?
 - [ ] create an app icon, use [HIG][appicon] to figure "document" icon type
+- [ ] load files or directories via open dialog
+- [ ] save file via save dialog
+- [ ] centralize data model (so we can track dirty buffers)
 
 ## Completed
 
+- [x] folders section for outline view
+- [x] some sort of data model for managing files and folders
+- [x] drop arbitrary files?
+- [x] disallow duplicates in sidebar via when dropped
 - [x] Restore main window when clicking app icon.
 - [x] window limited in how small it can get
 - [x] allow files to be dropped on application icon

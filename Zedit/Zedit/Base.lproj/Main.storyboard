@@ -797,13 +797,17 @@
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <imageView translatesAutoresizingMaskIntoConstraints="NO" id="M7A-fh-zed">
-                                                                    <rect key="frame" x="-167" y="0.0" width="14" height="17"/>
+                                                                    <rect key="frame" x="4" y="0.0" width="17" height="17"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="17" id="BkU-75-OeA"/>
+                                                                        <constraint firstAttribute="width" constant="17" id="eCC-wi-QfC"/>
+                                                                    </constraints>
                                                                     <imageCell key="cell" refusesFirstResponder="YES" imageScaling="proportionallyDown" image="NSActionTemplate" id="YUy-tj-ZcV"/>
                                                                 </imageView>
                                                                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XsN-bO-SGC">
-                                                                    <rect key="frame" x="-148" y="0.0" width="295" height="17"/>
+                                                                    <rect key="frame" x="23" y="0.0" width="122" height="17"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="291" id="rEd-Un-50u"/>
+                                                                        <constraint firstAttribute="height" constant="17" id="zvr-kh-xao"/>
                                                                     </constraints>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="n4N-av-g2P">
                                                                         <font key="font" metaFont="system"/>
@@ -813,11 +817,11 @@
                                                                 </textField>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstAttribute="trailing" secondItem="XsN-bO-SGC" secondAttribute="trailing" constant="2" id="Dug-Ya-yAE"/>
-                                                                <constraint firstItem="XsN-bO-SGC" firstAttribute="centerY" secondItem="Ss6-iW-Pvv" secondAttribute="centerY" id="IZl-Uj-Pj3"/>
-                                                                <constraint firstItem="XsN-bO-SGC" firstAttribute="bottom" secondItem="M7A-fh-zed" secondAttribute="bottom" id="WZz-CH-9UR"/>
-                                                                <constraint firstItem="XsN-bO-SGC" firstAttribute="top" secondItem="M7A-fh-zed" secondAttribute="top" id="ecP-wB-sWd"/>
-                                                                <constraint firstItem="XsN-bO-SGC" firstAttribute="leading" secondItem="M7A-fh-zed" secondAttribute="trailing" constant="7" id="t4Q-eV-T0E"/>
+                                                                <constraint firstItem="M7A-fh-zed" firstAttribute="centerY" secondItem="Ss6-iW-Pvv" secondAttribute="centerY" id="CLo-GK-gGb"/>
+                                                                <constraint firstItem="M7A-fh-zed" firstAttribute="leading" secondItem="Ss6-iW-Pvv" secondAttribute="leading" constant="4" id="I4u-r7-yWQ"/>
+                                                                <constraint firstItem="XsN-bO-SGC" firstAttribute="leading" secondItem="M7A-fh-zed" secondAttribute="trailing" constant="4" id="VR3-jV-3hy"/>
+                                                                <constraint firstItem="XsN-bO-SGC" firstAttribute="centerY" secondItem="Ss6-iW-Pvv" secondAttribute="centerY" id="Vb3-Rq-Nql"/>
+                                                                <constraint firstAttribute="trailing" secondItem="XsN-bO-SGC" secondAttribute="trailing" constant="4" id="zoc-sM-ZkT"/>
                                                             </constraints>
                                                             <connections>
                                                                 <outlet property="imageView" destination="M7A-fh-zed" id="ykj-rQ-JIa"/>

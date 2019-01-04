@@ -16,6 +16,7 @@
 		534DD60A21D9A19B00A71209 /* FilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534DD60921D9A19B00A71209 /* FilesViewController.swift */; };
 		534DD60C21D9DA0400A71209 /* FilesDropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534DD60B21D9DA0400A71209 /* FilesDropView.swift */; };
 		53FEE6BA21DF3510003474DF /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FEE6B921DF3510003474DF /* MainWindowController.swift */; };
+		53FEE6BC21DF3BDD003474DF /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FEE6BB21DF3BDD003474DF /* FileManager+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		534DD60921D9A19B00A71209 /* FilesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesViewController.swift; sourceTree = "<group>"; };
 		534DD60B21D9DA0400A71209 /* FilesDropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesDropView.swift; sourceTree = "<group>"; };
 		53FEE6B921DF3510003474DF /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		53FEE6BB21DF3BDD003474DF /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				534DD60721D99FFF00A71209 /* EditTextViewController.swift */,
 				534DD60921D9A19B00A71209 /* FilesViewController.swift */,
 				534DD60B21D9DA0400A71209 /* FilesDropView.swift */,
+				53FEE6BB21DF3BDD003474DF /* FileManager+Extension.swift */,
 			);
 			path = Zedit;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				534DD5F421D999A600A71209 /* AppDelegate.swift in Sources */,
+				53FEE6BC21DF3BDD003474DF /* FileManager+Extension.swift in Sources */,
 				53FEE6BA21DF3510003474DF /* MainWindowController.swift in Sources */,
 				534DD60421D99E4400A71209 /* EditControlView.swift in Sources */,
 				534DD60621D99F4100A71209 /* EditTextView.swift in Sources */,
