@@ -4,22 +4,28 @@
 
 Non-comprehensive and in no particular order.
 
-- [ ] drop folder makes folder show up expanded one level
-- [ ] click disclosure on directory to load next level
-- [ ] send message to text view to load selected file
-- [ ] can you ask if a file is a text file?
-- [ ] view text files in text view
-- [ ] preview markdown
-- [ ] syntax highlight markdown
-- [ ] save markdown file
-- [ ] sidebar has an area for open files (like bbedit does)?
-- [ ] create an app icon, use [HIG][appicon] to figure "document" icon type
-- [ ] load files or directories via open dialog
-- [ ] save file via save dialog
-- [ ] centralize data model (so we can track dirty buffers)
+- [ ] Make sidebar collapsable using mouse, how to re-open?
+- [ ] Drop folder makes folder show up expanded one level.
+- [ ] Take a look at UTI to see if files are text files.
+- [ ] Exclude alias files when dropped on sidebar.
+- [ ] Load selected file into text view.
+- [ ] Can you ask if a file is a text file?
+- [ ] Preview markdown.
+- [ ] Syntax highlight markdown.
+- [ ] Save markdown file.
+- [ ] Right click to remove top-level sidebar item
+- [ ] Sidebar has an area for open files (like bbedit does)?
+- [ ] Create an app icon, use [HIG][appicon] to figure "document" icon type
+- [ ] Load files or directories via open dialog
+- [ ] Save file via save, save-as dialog
+- [ ] Centralize data model (so we can track dirty buffers), present stats
+- [ ] Allow sidebar to get wider
 
 ## Completed
 
+- [x] Double-click folder to toggle expand/collapse.
+- [x] Click disclosure on directory to load next level.
+- [x] Consider using URL.resourceValues to omit packages, apps, etc
 - [x] folders section for outline view
 - [x] some sort of data model for managing files and folders
 - [x] drop arbitrary files?

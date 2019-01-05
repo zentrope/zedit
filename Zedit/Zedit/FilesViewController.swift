@@ -8,25 +8,6 @@
 
 import Cocoa
 
-class ZFile: Hashable {
-
-    var url: URL
-    var isDirectory = false
-
-    init(at url: URL, isDirectory flag: Bool = false) {
-        self.url = url
-        self.isDirectory = flag
-    }
-
-    static func == (lhs: ZFile, rhs: ZFile) -> Bool {
-        return lhs.url == rhs.url
-    }
-
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(url)
-    }
-
-}
 
 enum Section: String {
     case folders = "Folders"
@@ -38,10 +19,10 @@ enum Section: String {
 
 class FilesViewController: NSViewController {
 
-    // MARK: - Definitions
+    // MARK: - Data
 
-    var folders = [ZFile]()
-    var files = [ZFile]()
+    var folders = [Buffer]()
+    var files = [Buffer]()
 
     // MARK: - Outlets
 
@@ -61,17 +42,28 @@ class FilesViewController: NSViewController {
         outlineView.expandItem(Section.files)
     }
 
-    private func appendFile(_ file: ZFile) {
-        if file.isDirectory  {
-            if Set(self.folders).contains(file) {
+    private func append(buffer: Buffer) {
+        if buffer.isDirectory  {
+            if Set(self.folders).contains(buffer) {
                 return
             }
-            self.folders.append(file)
+            self.folders.append(buffer)
         } else {
-            if Set(self.files).contains(file) {
+            if Set(self.files).contains(buffer) {
                 return
             }
-            self.files.append(file)
+            self.files.append(buffer)
+        }
+    }
+
+    // MARK: - Actions
+
+    @IBAction func doubleClicked(_ sender: NSOutlineView) {
+        let item = sender.item(atRow: sender.clickedRow)
+        if sender.isItemExpanded(item) {
+            sender.collapseItem(item)
+        } else {
+            sender.expandItem(item)
         }
     }
 
@@ -81,15 +73,8 @@ class FilesViewController: NSViewController {
 extension FilesViewController: FilesDropViewDelegate {
 
     func droppedURLs(_ urls: [URL]) {
-        let fm = FileManager.default
         for url in urls {
-            print("-(FilesViewController) \(url)")
-            let zf = ZFile(at: url, isDirectory: fm.isDirectory(at: url))
-            if zf.isDirectory {
-                self.appendFile(zf)
-            } else {
-                self.appendFile(zf)
-            }
+            self.append(buffer: Buffer(at: url))
         }
         self.outlineView.reloadData()
     }
@@ -108,6 +93,12 @@ extension FilesViewController: NSOutlineViewDataSource {
                 return files.count
             case .folders:
                 return folders.count
+            }
+        }
+
+        if let zf = item as? Buffer {
+            if zf.isDirectory {
+                return zf.count
             }
         }
         return 0
@@ -129,6 +120,10 @@ extension FilesViewController: NSOutlineViewDataSource {
                 return folders[index] as Any
             }
         }
+
+        if let zf = item as? Buffer {
+            return zf[index]
+        }
         return "?"
     }
 
@@ -136,14 +131,14 @@ extension FilesViewController: NSOutlineViewDataSource {
         if let _ = item as? Section {
             return true
         }
-        if let f = item as? ZFile {
+        if let f = item as? Buffer {
             return f.isDirectory
         }
         return false
     }
 
     func outlineView(_ outlineView: NSOutlineView, shouldSelectItem item: Any) -> Bool {
-        if let f = item as? ZFile {
+        if let f = item as? Buffer {
             return !f.isDirectory
         }
         return false
@@ -173,11 +168,11 @@ extension FilesViewController: NSOutlineViewDelegate {
             view?.textField?.sizeToFit()
             return view
 
-        case let file as ZFile:
+        case let buffer as Buffer:
             let id = NSUserInterfaceItemIdentifier("DataCell")
             let view = outlineView.makeView(withIdentifier: id, owner: nil) as? NSTableCellView
-            view?.textField?.stringValue = file.url.lastPathComponent
-            view?.imageView?.image = NSWorkspace.shared.icon(forFile: file.url.path)
+            view?.textField?.stringValue = buffer.name
+            view?.imageView?.image = buffer.icon
             view?.textField?.sizeToFit()
             return view
 
