@@ -31,9 +31,18 @@ class Buffer: Hashable {
         hasher.combine(url)
     }
 
-
     subscript(index: Int) -> Buffer {
         return children[index]
+    }
+
+    func contents() -> String? {
+        if isDirectory {
+            return nil
+        }
+        if let data = FileManager.default.contents(atPath: url.path) {
+            return String(data: data, encoding: .utf8)
+        }
+        return nil
     }
 
     private func reload() {

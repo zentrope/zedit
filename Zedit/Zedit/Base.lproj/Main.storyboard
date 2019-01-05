@@ -832,6 +832,7 @@
                                                 </tableColumn>
                                             </tableColumns>
                                             <connections>
+                                                <action selector="clicked:" target="KFl-8O-vYw" id="Zd8-Da-zo7"/>
                                                 <action trigger="doubleAction" selector="doubleClicked:" target="KFl-8O-vYw" id="aQv-G7-67d"/>
                                             </connections>
                                         </outlineView>
@@ -909,7 +910,7 @@
                                 <rect key="frame" x="0.0" y="560" width="650" height="40"/>
                                 <subviews>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ytW-jU-faI">
-                                        <rect key="frame" x="603" y="8" width="37" height="23"/>
+                                        <rect key="frame" x="602.5" y="8" width="38" height="23"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="2Ch-MO-hD5"/>
                                             <constraint firstAttribute="height" constant="22" id="Dpr-4o-1ur"/>

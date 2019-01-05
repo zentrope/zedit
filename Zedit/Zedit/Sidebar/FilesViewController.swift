@@ -9,15 +9,16 @@
 import Cocoa
 
 
-enum Section: String {
-    case folders = "Folders"
-    case files = "Files"
-
-    static let all: [Section] = [.folders, .files]
-}
-
-
 class FilesViewController: NSViewController {
+
+    // MARK: - Definitions
+
+    enum Section: String {
+        case folders = "Folders"
+        case files = "Files"
+
+        static let all: [Section] = [.folders, .files]
+    }
 
     // MARK: - Data
 
@@ -42,6 +43,8 @@ class FilesViewController: NSViewController {
         outlineView.expandItem(Section.files)
     }
 
+    // MARK: - Mutation
+
     private func append(buffer: Buffer) {
         if buffer.isDirectory  {
             if Set(self.folders).contains(buffer) {
@@ -57,6 +60,10 @@ class FilesViewController: NSViewController {
     }
 
     // MARK: - Actions
+    @IBAction func clicked(_ sender: NSOutlineView) {
+        // Invoked on any row, regardless of selectability
+        print("clicked on \(sender.clickedRow)")
+    }
 
     @IBAction func doubleClicked(_ sender: NSOutlineView) {
         let item = sender.item(atRow: sender.clickedRow)
@@ -147,6 +154,18 @@ extension FilesViewController: NSOutlineViewDataSource {
 
 // MARK: - Outline View Delegate
 extension FilesViewController: NSOutlineViewDelegate {
+
+    func outlineViewSelectionDidChange(_ notification: Notification) {
+        // Invoked on items the delegate has deemed "selectable"
+        let row = outlineView.selectedRow
+        if row < 0 {
+            print("Rejecting selection change \(row)")
+            return
+        }
+        if let item = outlineView.item(atRow: row) as? Buffer {
+            EditTextViewController.shared?.visit(buffer: item)
+        }
+    }
 
     func outlineView(_ outlineView: NSOutlineView, heightOfRowByItem item: Any) -> CGFloat {
         return 22.0

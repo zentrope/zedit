@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -69,16 +69,32 @@
 			children = (
 				534DD5F321D999A600A71209 /* AppDelegate.swift */,
 				53FEE6B921DF3510003474DF /* MainWindowController.swift */,
-				534DD60321D99E4400A71209 /* EditControlView.swift */,
-				534DD60521D99F4100A71209 /* EditTextView.swift */,
-				534DD60721D99FFF00A71209 /* EditTextViewController.swift */,
-				534DD60921D9A19B00A71209 /* FilesViewController.swift */,
-				534DD60B21D9DA0400A71209 /* FilesDropView.swift */,
+				5372A19921E1328500352795 /* Editor */,
+				5372A19821E1325000352795 /* Sidebar */,
 				53B72DD021E090A400CA46BA /* Model */,
 				53B72DD221E090D900CA46BA /* Extensions */,
 				53B72DD121E090BE00CA46BA /* Support Files */,
 			);
 			path = Zedit;
+			sourceTree = "<group>";
+		};
+		5372A19821E1325000352795 /* Sidebar */ = {
+			isa = PBXGroup;
+			children = (
+				534DD60921D9A19B00A71209 /* FilesViewController.swift */,
+				534DD60B21D9DA0400A71209 /* FilesDropView.swift */,
+			);
+			path = Sidebar;
+			sourceTree = "<group>";
+		};
+		5372A19921E1328500352795 /* Editor */ = {
+			isa = PBXGroup;
+			children = (
+				534DD60321D99E4400A71209 /* EditControlView.swift */,
+				534DD60521D99F4100A71209 /* EditTextView.swift */,
+				534DD60721D99FFF00A71209 /* EditTextViewController.swift */,
+			);
+			path = Editor;
 			sourceTree = "<group>";
 		};
 		53B72DD021E090A400CA46BA /* Model */ = {
@@ -149,7 +165,7 @@
 				};
 			};
 			buildConfigurationList = 534DD5EB21D999A600A71209 /* Build configuration list for PBXProject "Zedit" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
