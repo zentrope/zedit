@@ -8,13 +8,7 @@
 
 import Cocoa
 
-protocol FilesDropViewDelegate {
-    func droppedURLs(_ urls: [URL])
-}
-
 class FilesDropView: NSView {
-
-    var delegate: FilesDropViewDelegate?
 
     required init?(coder decoder: NSCoder) {
         super.init(coder: decoder)
@@ -36,7 +30,7 @@ class FilesDropView: NSView {
     override func performDragOperation(_ sender: NSDraggingInfo) -> Bool {
         let pb = sender.draggingPasteboard
         if let urls = pb.readObjects(forClasses: [NSURL.self], options: [:]) as? [URL] {
-            delegate?.droppedURLs(urls)
+            EventManager.pub(.AddFiles(urls))
         }
         return true
     }

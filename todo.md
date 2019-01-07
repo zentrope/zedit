@@ -8,7 +8,6 @@ Non-comprehensive and in no particular order.
 - [ ] Drop folder makes folder show up expanded one level.
 - [ ] Take a look at UTI to see if files are text files.
 - [ ] Exclude alias files when dropped on sidebar.
-- [ ] Load selected file into text view.
 - [ ] Can you ask if a file is a text file?
 - [ ] Preview markdown.
 - [ ] Syntax highlight markdown.
@@ -20,9 +19,25 @@ Non-comprehensive and in no particular order.
 - [ ] Save file via save, save-as dialog
 - [ ] Centralize data model (so we can track dirty buffers), present stats
 - [ ] Allow sidebar to get wider
+- [ ] Allow the app to participate in a share sheet
+- [ ] Preferences window should provide default file location (~/Desktop).
+
+## Notes
+
+Can use this to get UTI of file:
+
+    NSWorkspace.shared.type(ofFile: "what/ever.md") -> String
+
+And maybe this to see if the file is plain text:
+
+    NSWorkspace.shared.type("plain.html", conformsToType: "public.text") -> Bool
+
+For instance, if the file is HTML, it'll return true.
 
 ## Completed
 
+- [x] Add an event notification for dropped files (on icon, and sidebar)
+- [x] Load selected file into text view.
 - [x] Double-click folder to toggle expand/collapse.
 - [x] Click disclosure on directory to load next level.
 - [x] Consider using URL.resourceValues to omit packages, apps, etc

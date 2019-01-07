@@ -20,7 +20,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func application(_ sender: NSApplication, openFiles filenames: [String]) {
-        print("Files to open: \(filenames)")
+        let urls = filenames.map { URL(fileURLWithPath: $0)}
+        EventManager.pub(.AddFiles(urls))
     }
 
     func applicationDidBecomeActive(_ notification: Notification) {

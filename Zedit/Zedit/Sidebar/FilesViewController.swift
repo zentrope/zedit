@@ -34,13 +34,11 @@ class FilesViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        dropView.delegate = self
         outlineView.dataSource = self
         outlineView.delegate = self
-
         outlineView.expandItem(Section.folders)
         outlineView.expandItem(Section.files)
+        EventManager.register(receiver: self)
     }
 
     // MARK: - Mutation
@@ -62,7 +60,7 @@ class FilesViewController: NSViewController {
     // MARK: - Actions
     @IBAction func clicked(_ sender: NSOutlineView) {
         // Invoked on any row, regardless of selectability
-        print("clicked on \(sender.clickedRow)")
+        // print("clicked on \(sender.clickedRow)")
     }
 
     @IBAction func doubleClicked(_ sender: NSOutlineView) {
@@ -76,14 +74,16 @@ class FilesViewController: NSViewController {
 
 }
 
-// MARK: - File Drop Delegate
-extension FilesViewController: FilesDropViewDelegate {
-
-    func droppedURLs(_ urls: [URL]) {
-        for url in urls {
-            self.append(buffer: Buffer(at: url))
+// MARK: - Event Manager Receiver
+extension FilesViewController: EventReceiver {
+    func receive(event: EventType) {
+        switch event {
+        case .AddFiles(let urls):
+            for url in urls {
+                self.append(buffer: Buffer(at: url))
+            }
+            self.outlineView.reloadData()
         }
-        self.outlineView.reloadData()
     }
 }
 
