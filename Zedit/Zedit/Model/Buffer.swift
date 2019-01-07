@@ -12,10 +12,12 @@ class Buffer: Hashable {
     // Not sure 'Buffer' is quite the right word, here, but neither is file.
     
     var isDirectory: Bool { get { return url.isDirectory() }}
+    var isText: Bool { get { return isTextFile() }}
+
     var count: Int { get { reload() ; return children.count }}
     var name: String { get { return url.lastPathComponent }}
     var icon: NSImage { get { return url.icon() }}
-    
+
     private var url: URL
     private var children = [Buffer]()
 
@@ -33,6 +35,15 @@ class Buffer: Hashable {
 
     subscript(index: Int) -> Buffer {
         return children[index]
+    }
+
+    private func isTextFile() -> Bool {
+        if let uti = try? NSWorkspace.shared.type(ofFile: url.path) {
+            let isText = NSWorkspace.shared.type(uti, conformsToType: "public.text")
+            // print("uti=\(uti), isText=\(isText), url=\(url)")
+            return isText
+        }
+        return false
     }
 
     func contents() -> String? {

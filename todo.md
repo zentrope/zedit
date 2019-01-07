@@ -6,9 +6,6 @@ Non-comprehensive and in no particular order.
 
 - [ ] Make sidebar collapsable using mouse, how to re-open?
 - [ ] Drop folder makes folder show up expanded one level.
-- [ ] Take a look at UTI to see if files are text files.
-- [ ] Exclude alias files when dropped on sidebar.
-- [ ] Can you ask if a file is a text file?
 - [ ] Preview markdown.
 - [ ] Syntax highlight markdown.
 - [ ] Save markdown file.
@@ -24,18 +21,12 @@ Non-comprehensive and in no particular order.
 
 ## Notes
 
-Can use this to get UTI of file:
-
-    NSWorkspace.shared.type(ofFile: "what/ever.md") -> String
-
-And maybe this to see if the file is plain text:
-
-    NSWorkspace.shared.type("plain.html", conformsToType: "public.text") -> Bool
-
-For instance, if the file is HTML, it'll return true.
-
 ## Completed
 
+- [x] Disallow loading non-text files based on workspace.type UTI.
+- [x] Can you ask if a file is a text file? (Use NSWorkspace).
+- [x] Don't allow user to select non-text file
+- [x] Non-selectable files should be greyed
 - [x] Add an event notification for dropped files (on icon, and sidebar)
 - [x] Load selected file into text view.
 - [x] Double-click folder to toggle expand/collapse.

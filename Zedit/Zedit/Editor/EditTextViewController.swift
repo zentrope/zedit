@@ -34,10 +34,11 @@ class EditTextViewController: NSViewController {
     }
 
     func visit(buffer: Buffer) {
+        if !buffer.isText {
+            return
+        }
         if let text = buffer.contents() {
             textView.string = text
-        } else {
-            textView.string = "_Can't get data for '\(buffer.name)'._"
         }
     }
     

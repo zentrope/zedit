@@ -146,7 +146,8 @@ extension FilesViewController: NSOutlineViewDataSource {
 
     func outlineView(_ outlineView: NSOutlineView, shouldSelectItem item: Any) -> Bool {
         if let f = item as? Buffer {
-            return !f.isDirectory
+            return f.isText
+            //return !f.isDirectory || !f.isText
         }
         return false
     }
@@ -192,6 +193,11 @@ extension FilesViewController: NSOutlineViewDelegate {
             let view = outlineView.makeView(withIdentifier: id, owner: nil) as? NSTableCellView
             view?.textField?.stringValue = buffer.name
             view?.imageView?.image = buffer.icon
+            if buffer.isText || buffer.isDirectory {
+                view?.textField?.textColor = NSColor.controlColor
+            } else {
+                view?.textField?.textColor = NSColor.systemGray
+            }
             view?.textField?.sizeToFit()
             return view
 
