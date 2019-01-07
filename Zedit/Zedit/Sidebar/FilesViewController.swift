@@ -30,12 +30,20 @@ class FilesViewController: NSViewController {
     @IBOutlet weak var outlineView: NSOutlineView!
     @IBOutlet var dropView: FilesDropView!
 
+    // MARK: - Context menu items
+
+    let removeFromSidebar = NSMenuItem(
+        title: "Remove from navigator",
+        action: #selector(removeFromNavigator),
+        keyEquivalent: "")
+
     // MARK: - View controller lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         outlineView.dataSource = self
         outlineView.delegate = self
+        outlineView.menu?.delegate = self
         outlineView.expandItem(Section.folders)
         outlineView.expandItem(Section.files)
         EventManager.register(receiver: self)
@@ -83,6 +91,32 @@ extension FilesViewController: EventReceiver {
                 self.append(buffer: Buffer(at: url))
             }
             self.outlineView.reloadData()
+        }
+    }
+}
+
+// MARK: - Context Menu Delegate
+
+extension FilesViewController: NSMenuDelegate {
+
+    @objc func removeFromNavigator() {
+        if let buffer = outlineView.item(atRow: outlineView.clickedRow) as? Buffer,
+            let section = outlineView.parent(forItem: buffer) as? Section {
+            switch section {
+            case .folders:
+                folders.removeAll { $0 === buffer }
+            case .files:
+                files.removeAll { $0 === buffer }
+            }
+            outlineView.reloadData()
+        }
+    }
+
+    func menuWillOpen(_ menu: NSMenu) {
+        menu.removeAllItems()
+        let item = outlineView.item(atRow: outlineView.clickedRow)
+        if let _ = outlineView.parent(forItem: item) as? Section {
+            menu.addItem(removeFromSidebar)
         }
     }
 }

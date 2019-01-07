@@ -834,6 +834,7 @@
                                             <connections>
                                                 <action selector="clicked:" target="KFl-8O-vYw" id="Zd8-Da-zo7"/>
                                                 <action trigger="doubleAction" selector="doubleClicked:" target="KFl-8O-vYw" id="aQv-G7-67d"/>
+                                                <outlet property="menu" destination="V3a-6e-Au4" id="0wz-6H-rOp"/>
                                             </connections>
                                         </outlineView>
                                     </subviews>
@@ -870,8 +871,21 @@
                     </connections>
                 </viewController>
                 <customObject id="KDL-G1-bXl" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <menu id="V3a-6e-Au4">
+                    <items>
+                        <menuItem title="Item 1" id="1fI-mb-k4F">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                        </menuItem>
+                        <menuItem title="Item 2" id="tKH-gJ-kWL">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                        </menuItem>
+                        <menuItem title="Item 3" id="tj7-AX-lZN">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                        </menuItem>
+                    </items>
+                </menu>
             </objects>
-            <point key="canvasLocation" x="-171" y="1381"/>
+            <point key="canvasLocation" x="-232" y="1381"/>
         </scene>
         <!--Editor-->
         <scene sceneID="CE3-ry-lI0">

@@ -9,7 +9,6 @@ Non-comprehensive and in no particular order.
 - [ ] Preview markdown.
 - [ ] Syntax highlight markdown.
 - [ ] Save markdown file.
-- [ ] Right click to remove top-level sidebar item
 - [ ] Sidebar has an area for open files (like bbedit does)?
 - [ ] Create an app icon, use [HIG][appicon] to figure "document" icon type
 - [ ] Load files or directories via open dialog
@@ -18,11 +17,13 @@ Non-comprehensive and in no particular order.
 - [ ] Allow sidebar to get wider
 - [ ] Allow the app to participate in a share sheet
 - [ ] Preferences window should provide default file location (~/Desktop).
+- [ ] If dropped file is an alias for a directory, find/use the directory
 
 ## Notes
 
 ## Completed
 
+- [x] Right click to remove top-level sidebar item
 - [x] Disallow loading non-text files based on workspace.type UTI.
 - [x] Can you ask if a file is a text file? (Use NSWorkspace).
 - [x] Don't allow user to select non-text file
