@@ -4,6 +4,9 @@
 
 Non-comprehensive and in no particular order.
 
+- [ ] Double-clicking a non-text sidebar item should launch it in Finder
+- [ ] Drop on Text View should add sidebar files, and select first dropped file
+- [ ] When removing top-level sidebar items, clear editor if contents is part of that item
 - [ ] Make sidebar collapsable using mouse, how to re-open?
 - [ ] Drop folder makes folder show up expanded one level.
 - [ ] Preview markdown.
@@ -14,7 +17,7 @@ Non-comprehensive and in no particular order.
 - [ ] Load files or directories via open dialog
 - [ ] Save file via save, save-as dialog
 - [ ] Centralize data model (so we can track dirty buffers), present stats
-- [ ] Allow sidebar to get wider
+- [ ] Allow sidebar to get and start wider
 - [ ] Allow the app to participate in a share sheet
 - [ ] Preferences window should provide default file location (~/Desktop).
 - [ ] If dropped file is an alias for a directory, find/use the directory
@@ -23,6 +26,7 @@ Non-comprehensive and in no particular order.
 
 ## Completed
 
+- [x] Revert doc-type registration in info.plist to support app-icon d/d
 - [x] Right click to remove top-level sidebar item
 - [x] Disallow loading non-text files based on workspace.type UTI.
 - [x] Can you ask if a file is a text file? (Use NSWorkspace).
