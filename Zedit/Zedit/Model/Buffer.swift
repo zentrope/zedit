@@ -22,7 +22,11 @@ class Buffer: Hashable {
     private var children = [Buffer]()
 
     init(at url: URL) {
-        self.url = url
+        if let actual = try? URL(resolvingAliasFileAt: url) {
+            self.url = actual
+        } else {
+            self.url = url.resolvingSymlinksInPath()
+        }
     }
 
     static func == (lhs: Buffer, rhs: Buffer) -> Bool {
