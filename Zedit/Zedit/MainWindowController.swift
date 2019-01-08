@@ -20,4 +20,19 @@ class MainWindowController: NSWindowController {
     static func show() {
         shared?.window?.makeKeyAndOrderFront(self)
     }
+
+    @objc func openDocument(_ sender: NSMenuItem) {
+        let panel = NSOpenPanel()
+        panel.allowsMultipleSelection = true
+        panel.canChooseDirectories = true
+        panel.canChooseFiles = true
+        panel.resolvesAliases = true
+
+        panel.beginSheetModal(for: self.window!) { response in
+            if response == .OK {
+                EventManager.pub(.AddFiles(panel.urls))
+            }
+        }
+    }
+
 }
