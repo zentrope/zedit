@@ -13,9 +13,10 @@ class Buffer: Hashable {
     
     var isDirectory: Bool { get { return url.isDirectory() }}
     var isText: Bool { get { return isTextFile() }}
+    var isDirty = false
 
     var count: Int { get { reload() ; return children.count }}
-    var name: String { get { return url.lastPathComponent }}
+    var name: String { get { return url.lastPathComponent + (isDirty ? "*" : "") }}
     var icon: NSImage { get { return url.icon() }}
 
     private var url: URL
@@ -37,6 +38,20 @@ class Buffer: Hashable {
         hasher.combine(url)
     }
 
+    func contents() -> String? {
+        if isDirectory {
+            return nil
+        }
+        if let data = FileManager.default.contents(atPath: url.path) {
+            return String(data: data, encoding: .utf8)
+        }
+        return nil
+    }
+
+    func save(content: String) throws {
+        try content.write(to: url, atomically: true, encoding: .utf8)
+    }
+
     subscript(index: Int) -> Buffer {
         return children[index]
     }
@@ -48,16 +63,6 @@ class Buffer: Hashable {
             return isText
         }
         return false
-    }
-
-    func contents() -> String? {
-        if isDirectory {
-            return nil
-        }
-        if let data = FileManager.default.contents(atPath: url.path) {
-            return String(data: data, encoding: .utf8)
-        }
-        return nil
     }
 
     private func reload() {

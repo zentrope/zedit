@@ -17,6 +17,7 @@
 		534DD60C21D9DA0400A71209 /* FilesDropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534DD60B21D9DA0400A71209 /* FilesDropView.swift */; };
 		5372A19B21E305BB00352795 /* Atomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5372A19A21E305BB00352795 /* Atomic.swift */; };
 		5372A19D21E305D900352795 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5372A19C21E305D900352795 /* EventManager.swift */; };
+		53ADA5B621E7051100688080 /* BufferManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ADA5B521E7051100688080 /* BufferManager.swift */; };
 		53B72DCD21E08BE000CA46BA /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B72DCC21E08BE000CA46BA /* URL+Extension.swift */; };
 		53B72DCF21E08D5200CA46BA /* Buffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B72DCE21E08D5200CA46BA /* Buffer.swift */; };
 		53FEE6BA21DF3510003474DF /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FEE6B921DF3510003474DF /* MainWindowController.swift */; };
@@ -36,6 +37,7 @@
 		534DD60B21D9DA0400A71209 /* FilesDropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesDropView.swift; sourceTree = "<group>"; };
 		5372A19A21E305BB00352795 /* Atomic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Atomic.swift; sourceTree = "<group>"; };
 		5372A19C21E305D900352795 /* EventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
+		53ADA5B521E7051100688080 /* BufferManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BufferManager.swift; sourceTree = "<group>"; };
 		53B72DCC21E08BE000CA46BA /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
 		53B72DCE21E08D5200CA46BA /* Buffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buffer.swift; sourceTree = "<group>"; };
 		53FEE6B921DF3510003474DF /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
@@ -87,8 +89,8 @@
 		5372A19821E1325000352795 /* Sidebar */ = {
 			isa = PBXGroup;
 			children = (
-				534DD60921D9A19B00A71209 /* FilesViewController.swift */,
 				534DD60B21D9DA0400A71209 /* FilesDropView.swift */,
+				534DD60921D9A19B00A71209 /* FilesViewController.swift */,
 			);
 			path = Sidebar;
 			sourceTree = "<group>";
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				5372A19C21E305D900352795 /* EventManager.swift */,
+				53ADA5B521E7051100688080 /* BufferManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				534DD60621D99F4100A71209 /* EditTextView.swift in Sources */,
 				5372A19B21E305BB00352795 /* Atomic.swift in Sources */,
 				53B72DCD21E08BE000CA46BA /* URL+Extension.swift in Sources */,
+				53ADA5B621E7051100688080 /* BufferManager.swift in Sources */,
 				534DD60A21D9A19B00A71209 /* FilesViewController.swift in Sources */,
 				534DD60821D99FFF00A71209 /* EditTextViewController.swift in Sources */,
 				534DD60C21D9DA0400A71209 /* FilesDropView.swift in Sources */,

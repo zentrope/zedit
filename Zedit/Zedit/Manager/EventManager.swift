@@ -10,6 +10,9 @@ import Foundation
 
 enum EventType {
     case AddFiles([URL])
+    case BufferDirtied(Buffer)
+    case BufferSaved(Buffer)
+    case BufferVisited(Buffer)
 }
 
 protocol EventReceiver: class {

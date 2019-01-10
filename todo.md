@@ -11,19 +11,27 @@ Non-comprehensive and in no particular order.
 - [ ] Drop folder makes folder show up expanded one level.
 - [ ] Preview markdown.
 - [ ] Syntax highlight markdown.
-- [ ] Save markdown file.
 - [ ] Sidebar has an area for open files (like bbedit does)?
 - [ ] Create an app icon, use [HIG][appicon] to figure "document" icon type
-- [ ] Save file via save, save-as dialog
 - [ ] Centralize data model (so we can track dirty buffers), present stats
-- [ ] Allow sidebar to get and start wider
 - [ ] Allow the app to participate in a share sheet
 - [ ] Preferences window should provide default file location (~/Desktop).
 
-## Notes
+## Saving files
+
+- [ ] Handle file already changed case, set up a "save as" sheet
+- [ ] Enable the "Save as..." menu once editing has started.
+- [ ] Enable the "Revert to saved..." menu once editing has started.
+- [ ] Store pre-edited text so we can revert it.
+- [ ] Detect if file has changed on f/s before saving.
+- [ ] How to handle when file names change via finder?
 
 ## Completed
 
+- [x] Save markdown file.
+- [x] Add an event for when a file is "dirty" or is being edited.
+- [x] Find a way to turn on the "save..." menu once edited (automatic, turns out)
+- [x] Allow sidebar to get and start wider
 - [x] If dropped file is an alias for a directory, find/use the directory/file
 - [x] Load files or directories via open dialog
 - [x] Revert doc-type registration in info.plist to support app-icon d/d

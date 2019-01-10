@@ -20,11 +20,6 @@ class FilesViewController: NSViewController {
         static let all: [Section] = [.folders, .files]
     }
 
-    // MARK: - Data
-
-    var folders = [Buffer]()
-    var files = [Buffer]()
-
     // MARK: - Outlets
 
     @IBOutlet weak var outlineView: NSOutlineView!
@@ -49,22 +44,6 @@ class FilesViewController: NSViewController {
         EventManager.register(receiver: self)
     }
 
-    // MARK: - Mutation
-
-    private func append(buffer: Buffer) {
-        if buffer.isDirectory  {
-            if Set(self.folders).contains(buffer) {
-                return
-            }
-            self.folders.append(buffer)
-        } else {
-            if Set(self.files).contains(buffer) {
-                return
-            }
-            self.files.append(buffer)
-        }
-    }
-
     // MARK: - Actions
     @IBAction func clicked(_ sender: NSOutlineView) {
         // Invoked on any row, regardless of selectability
@@ -87,10 +66,14 @@ extension FilesViewController: EventReceiver {
     func receive(event: EventType) {
         switch event {
         case .AddFiles(let urls):
-            for url in urls {
-                self.append(buffer: Buffer(at: url))
-            }
+            BufferManager.shared.append(urls: urls)
             self.outlineView.reloadData()
+        case .BufferDirtied(let buffer):
+            outlineView.reloadItem(buffer)
+        case .BufferSaved(let buffer):
+            outlineView.reloadItem(buffer)
+        case .BufferVisited(_):
+            break
         }
     }
 }
@@ -100,14 +83,8 @@ extension FilesViewController: EventReceiver {
 extension FilesViewController: NSMenuDelegate {
 
     @objc func removeFromNavigator() {
-        if let buffer = outlineView.item(atRow: outlineView.clickedRow) as? Buffer,
-            let section = outlineView.parent(forItem: buffer) as? Section {
-            switch section {
-            case .folders:
-                folders.removeAll { $0 === buffer }
-            case .files:
-                files.removeAll { $0 === buffer }
-            }
+        if let buffer = outlineView.item(atRow: outlineView.clickedRow) as? Buffer {
+            BufferManager.shared.remove(buffer: buffer)
             outlineView.reloadData()
         }
     }
@@ -131,9 +108,9 @@ extension FilesViewController: NSOutlineViewDataSource {
         if let section = item as? Section {
             switch section {
             case .files:
-                return files.count
+                return BufferManager.shared.files.count
             case .folders:
-                return folders.count
+                return BufferManager.shared.folders.count
             }
         }
 
@@ -156,9 +133,9 @@ extension FilesViewController: NSOutlineViewDataSource {
         if let section = item as? Section {
             switch section {
             case .files:
-                return files[index] as Any
+                return BufferManager.shared.files[index]
             case .folders:
-                return folders[index] as Any
+                return BufferManager.shared.folders[index]
             }
         }
 
@@ -181,7 +158,6 @@ extension FilesViewController: NSOutlineViewDataSource {
     func outlineView(_ outlineView: NSOutlineView, shouldSelectItem item: Any) -> Bool {
         if let f = item as? Buffer {
             return f.isText
-            //return !f.isDirectory || !f.isText
         }
         return false
     }
@@ -197,8 +173,9 @@ extension FilesViewController: NSOutlineViewDelegate {
             print("Rejecting selection change \(row)")
             return
         }
-        if let item = outlineView.item(atRow: row) as? Buffer {
-            EditTextViewController.shared?.visit(buffer: item)
+        if let buffer = outlineView.item(atRow: row) as? Buffer {
+            BufferManager.shared.focused = buffer
+            EventManager.pub(.BufferVisited(buffer))
         }
     }
 
