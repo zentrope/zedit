@@ -59,7 +59,6 @@ class Buffer: Hashable {
     private func isTextFile() -> Bool {
         if let uti = try? NSWorkspace.shared.type(ofFile: url.path) {
             let isText = NSWorkspace.shared.type(uti, conformsToType: "public.text")
-            // print("uti=\(uti), isText=\(isText), url=\(url)")
             return isText
         }
         return false
@@ -73,6 +72,7 @@ class Buffer: Hashable {
         do {
             let urls = try fm.contentsOfDirectory(at: url, includingPropertiesForKeys: props, options: options)
             for url in urls {
+                print("Loading: \(String(describing: url.fileReferenceURL()))")
                 if url.isPackage() || url.isApplication() {
                     continue
                 }

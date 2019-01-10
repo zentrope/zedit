@@ -26,4 +26,8 @@ extension URL {
         return NSWorkspace.shared.icon(forFile: self.path)
     }
 
+    func fileReferenceURL() -> NSURL? {
+        return (self as NSURL).fileReferenceURL() as NSURL?
+    }
+
 }

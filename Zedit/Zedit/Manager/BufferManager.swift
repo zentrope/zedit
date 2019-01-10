@@ -30,6 +30,7 @@ class BufferManager {
 
     func append(urls: [URL]) {
         urls.forEach {
+            print("Loading: \(String(describing: $0.fileReferenceURL()))")
             append(buffer: Buffer(at: $0))
         }
     }
