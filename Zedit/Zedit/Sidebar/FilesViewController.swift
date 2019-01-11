@@ -65,14 +65,27 @@ class FilesViewController: NSViewController {
 extension FilesViewController: EventReceiver {
     func receive(event: EventType) {
         switch event {
+
         case .AddFiles(let urls):
             BufferManager.shared.append(urls: urls)
             self.outlineView.reloadData()
+
         case .BufferDirtied(let buffer):
             outlineView.reloadItem(buffer)
+
         case .BufferSaved(let buffer):
             outlineView.reloadItem(buffer)
-        case .BufferVisited(_):
+
+        case .BufferFocussed(let buffer):
+            // When the buffer is switched via some other mechanism, make sure we
+            // do what we can do see it before attempting to select it.
+            outlineView.reloadData()
+            let row = outlineView.row(forItem: buffer)
+            if row > 0 {
+                outlineView.selectRowIndexes(IndexSet([row]), byExtendingSelection: false)
+            }
+            
+        default:
             break
         }
     }

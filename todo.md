@@ -19,15 +19,15 @@ Non-comprehensive and in no particular order.
 
 ## Saving files
 
-- [ ] Handle file already changed case, set up a "save as" sheet
-- [ ] Enable the "Save as..." menu once editing has started.
-- [ ] Enable the "Revert to saved..." menu once editing has started.
-- [ ] Store pre-edited text so we can revert it.
+- [ ] Add a suggested extension when saving to a new file?
+- [ ] Handle file already changed case, set up a "save as" sheet?
 - [ ] Detect if file has changed on f/s before saving.
 - [ ] How to handle when file names change via finder?
 
 ## Completed
 
+- [x] Enable the "Save as..." menu once editing has started.
+- [x] Enable the "Revert to saved..." menu once editing has started.
 - [x] Save markdown file.
 - [x] Add an event for when a file is "dirty" or is being edited.
 - [x] Find a way to turn on the "save..." menu once edited (automatic, turns out)

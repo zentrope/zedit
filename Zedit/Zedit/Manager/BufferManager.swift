@@ -24,13 +24,20 @@ class BufferManager {
         }
     }
 
+    func create(at url: URL, withContents text: String) throws -> Buffer {
+        let newBuffer = Buffer(at: url)
+        try newBuffer.save(content: text)
+        append(buffer: newBuffer)
+        return newBuffer
+    }
+
     func save(to buffer: Buffer, contents: String) throws {
         try buffer.save(content: contents)
     }
 
     func append(urls: [URL]) {
         urls.forEach {
-            print("Loading: \(String(describing: $0.fileReferenceURL()))")
+            print("Loading: \(String(describing: $0.fileReferenceURL())) -> \($0)")
             append(buffer: Buffer(at: $0))
         }
     }

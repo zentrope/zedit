@@ -53,7 +53,6 @@ class EditTextViewController: NSViewController {
     // MARK: - Menu Actions
 
     @objc func saveDocument(_ sender: NSMenuItem) {
-        print("got a save document request")
         if let b = BufferManager.shared.focused {
             do {
                 try BufferManager.shared.save(to: b, contents: textView.string)
@@ -65,11 +64,53 @@ class EditTextViewController: NSViewController {
             }
         }
     }
+
+    @objc func saveDocumentAs(_ sender: NSMenuItem) {
+        print("save document as")
+        let panel = NSSavePanel()
+        panel.canCreateDirectories = true
+
+        if let w = MainWindowController.shared?.window {
+            panel.beginSheetModal(for: w) { (resp) in
+                if resp == .OK {
+                    if let url = panel.url {
+                        do {
+                            let newBuffer = try BufferManager.shared.create(at: url, withContents: self.textView.string)
+                            self.revertDocumentToSaved(nil)
+                            BufferManager.shared.focused = newBuffer
+                            EventManager.pub(.BufferFocussed(newBuffer))
+                        } catch let err {
+                            print("This should be an alert: \(err)")
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @objc func revertDocumentToSaved(_ sender: NSMenuItem?) {
+        print("revert document to saved")
+        if let b = BufferManager.shared.focused {
+            textView.string = b.contents() ?? ""
+        }
+    }
+
+}
+
+// MARK: - Menu show/hide
+
+extension EditTextViewController: NSMenuItemValidation {
+
+    func validateMenuItem(_ menuItem: NSMenuItem) -> Bool {
+        print("menu item validation: \(menuItem)")
+        return BufferManager.shared.focused?.isDirty ?? false
+    }
 }
 
 // MARK: - Event Manager Receiver
 
 extension EditTextViewController: EventReceiver {
+
     func receive(event: EventType) {
         switch event {
         case .BufferVisited(let buffer):

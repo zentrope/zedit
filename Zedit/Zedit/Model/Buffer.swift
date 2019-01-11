@@ -9,8 +9,7 @@
 import Cocoa
 
 class Buffer: Hashable {
-    // Not sure 'Buffer' is quite the right word, here, but neither is file.
-    
+
     var isDirectory: Bool { get { return url.isDirectory() }}
     var isText: Bool { get { return isTextFile() }}
     var isDirty = false
@@ -72,7 +71,7 @@ class Buffer: Hashable {
         do {
             let urls = try fm.contentsOfDirectory(at: url, includingPropertiesForKeys: props, options: options)
             for url in urls {
-                print("Loading: \(String(describing: url.fileReferenceURL()))")
+                print("\(Date()) (buffer.reload): \(String(describing: url.fileReferenceURL())) -> \(url)")
                 if url.isPackage() || url.isApplication() {
                     continue
                 }

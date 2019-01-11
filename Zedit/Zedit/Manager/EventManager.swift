@@ -13,6 +13,7 @@ enum EventType {
     case BufferDirtied(Buffer)
     case BufferSaved(Buffer)
     case BufferVisited(Buffer)
+    case BufferFocussed(Buffer)
 }
 
 protocol EventReceiver: class {
